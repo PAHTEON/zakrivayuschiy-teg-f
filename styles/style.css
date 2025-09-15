@@ -436,7 +436,7 @@ dialog::backdrop {
 }
 
 .image_blur {
-    filter: blur(0.3rem);
+    filter: blur(0.3rem) invert(0.1) contrast(80%);
 }
 
 @media (min-width: 1440px) {
