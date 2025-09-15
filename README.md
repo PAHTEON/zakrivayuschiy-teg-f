@@ -1,1 +1,2 @@
-https://pahteon.github.io/zakrivayuschiy-teg-f/
+https://github.com/PAHTEON/zakrivayuschiy-teg-f
+
