@@ -66,7 +66,6 @@
     max-width: var(--container-width);
     margin-right: var(--horizontal-padding);
     margin-left: var(--horizontal-padding);
-    min-width: 375px;
 }
 
 .card_title {
@@ -272,33 +271,6 @@
     transform-origin: center;
 }
 
-@keyframes hearts {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.25);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes spark {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-}
-
 .like-icon.is-liked .heart {
     animation: hearts 0.3s ease-in 0.1s forwards;
     transform-origin: center;
@@ -484,4 +456,8 @@ dialog::backdrop {
     }
 }
 
-@media (min-width: 700px) {}
+@media (width < 1440px) {
+    .container {
+        min-width: 375px;
+    }
+}
