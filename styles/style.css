@@ -14,12 +14,13 @@
     min-inline-size: 320px;
     min-block-size: 100dvb;
     font-family: var(--Inter), sans-serif;
-    font-variation-settings: 'wght' var(--page-font-weight-text-Inter);
     background-image: var(--background-gradient);
     background-size: cover;
     background-attachment: fixed;
     display: grid;
     justify-content: center;
+    background-position: center;
+    font-variation-settings: var(--page-wght);
 }
 
 .header {
@@ -36,7 +37,6 @@
 .header_logo {
     font-family: var(--page-font-family-PressStart2P);
     font-size: var(--header-logo-font-size);
-    font-weight: 400;
     padding-top: 122px;
     padding-bottom: 0px;
     block-size: var(--header-logo-height);
@@ -52,7 +52,6 @@
 .main {
     display: grid;
     gap: 52px;
-    background-color: #FFFFFF;
     place-items: center;
     width: 100%;
 }
@@ -74,7 +73,7 @@
     padding-right: 10px;
     padding-bottom: 3px;
     font-family: var(--page-font-family-Inter);
-    font-weight: 715;
+    font-variation-settings: var(--card-title-wght);
     font-size: 18px;
 }
 
@@ -88,10 +87,14 @@
     padding-top: 3px;
     line-height: 21px;
     letter-spacing: 0;
+    font-variation-settings: var(--card-text-wght);
 }
 
 .post_image {
     position: relative;
+    border-top: solid 2px #000000;
+    border-bottom: solid 2px #000000;
+    margin-bottom: 25px;
 }
 
 .image_bus {
@@ -99,7 +102,6 @@
     background-size: cover;
     background-position: center;
     inline-size: 100%;
-    padding-bottom: 25px;
 }
 
 .post_label {
@@ -109,7 +111,7 @@
     mix-blend-mode: hard-light;
     font-family: var(--page-font-family-PressStart2P);
     font-size: 14px;
-    font-weight: 400;
+    font-variation-settings: var(--post-label-wght);
     line-height: 1;
     text-transform: uppercase;
     color: #000000;
@@ -136,16 +138,19 @@
 .button__text {
     font-family: var(--page-font-family-PressStart2P);
     font-size: 14px;
-    font-weight: 400;
+    font-variation-settings: var(--button-text-wght);
     z-index: 1;
     color: var(--button-text-color);
     mix-blend-mode: difference;
 }
 
 .card__like-button {
-    position: relative;
     inline-size: 130px;
     block-size: 38px;
+}
+
+.button_black {
+    position: relative;
     background-color: transparent;
     cursor: pointer;
     outline: none;
@@ -154,12 +159,12 @@
     color: var(--accent-color);
 }
 
-.card__like-button:focus {
+.button_black:focus {
     outline: none;
     box-shadow: 2px 2px 0 0 var(--accent-color);
 }
 
-.card__like-button::before {
+.button_black::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -169,8 +174,19 @@
     z-index: 0;
 }
 
-.card__like-button:hover::before {
+.button_black:hover::before {
     transform: translateX(0);
+}
+
+.button_save {
+    inline-size: 306px;
+    block-size: 84px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #000000;
+    background-color: #FFFFFF;
 }
 
 .button_like-icon {
@@ -289,53 +305,16 @@ dialog {
 }
 
 dialog:not([open]) {
-    pointer-events: none;
-    opacity: 0;
+    display: none;
 }
 
 dialog::backdrop {
-    background-color: rgb(0 0 0 / 0.3);
+    background-color: rgb(0 0 0 / 0.75);
 }
 
 .footer {
     display: grid;
     place-items: center;
-    background-color: #FFFFFF;
-}
-
-.button_save {
-    position: relative;
-    color: var(--accent-color);
-    cursor: pointer;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
-    background-color: transparent;
-    inline-size: 306px;
-    block-size: 84px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    display: grid;
-    place-items: center;
-    border: 2px solid #000000;
-}
-
-.button_save:focus {
-    outline: none;
-    box-shadow: 2px 2px 0 0 var(--accent-color);
-}
-
-.button_save::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: var(--accent-color);
-    transform: translateX(-100%);
-    transition: transform 0.5s ease-in-out;
-    z-index: 0;
-}
-
-.button_save:hover::before {
-    transform: translateX(0);
 }
 
 .save_icon_svg {
@@ -348,7 +327,7 @@ dialog::backdrop {
 .button_save_text {
     font-family: var(--page-font-family-PressStart2P);
     font-size: 14px;
-    font-weight: 400;
+    font-variation-settings: var(--button-text-wght);
     color: var(--button-text-color);
     mix-blend-mode: difference;
 }
@@ -356,10 +335,13 @@ dialog::backdrop {
 .dialog_floppy {
     display: grid;
     inline-size: 341px;
-    block-size: 191px;
+    padding-top: 30px;
+    gap: 30px;
+    /*
+    block-size: 191px;*/
     font-family: var(--page-font-family-PressStart2P);
     font-size: 14px;
-    font-weight: 400;
+    font-variation-settings: var(--button-text-wght);
     place-items: center;
 }
 
@@ -368,40 +350,20 @@ dialog::backdrop {
     grid-template-columns: 1fr 234px;
     gap: 20px;
     inline-size: 261px;
-    block-size: 63px;
+    /*
+    block-size: 63px;*/
     text-transform: uppercase;
     line-height: 150%;
     align-items: center;
 }
 
 .button_floppy {
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
     block-size: 38px;
     inline-size: 261px;
-    background-color: transparent;
-    border: 2px solid #000000;
-    cursor: pointer;
 }
 
-.button_floppy:focus {
-    outline: none;
-    box-shadow: 2px 2px 0 0 var(--accent-color);
-}
-
-.button_floppy::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: var(--accent-color);
-    transform: translateX(-100%);
-    transition: transform 0.5s ease-in-out;
-    z-index: 0;
-}
-
-.button_floppy:hover::before {
-    transform: translateX(0);
+.dialog_button {
+    padding-bottom: 10px;
 }
 
 .dialog_text {
@@ -440,6 +402,9 @@ dialog::backdrop {
 }
 
 @media (min-width: 1440px) {
+    .header {
+        margin-top: 100px;
+    }
     .container {
         margin-left: auto;
         margin-right: auto;
@@ -453,6 +418,24 @@ dialog::backdrop {
     }
     .main {
         width: 100vw;
+    }
+    .card_title {
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+    .button_save {
+        block-size: 55px;
+        min-width: 335px;
+        display: grid;
+        grid-auto-flow: column;
+        padding-left: 15px;
+        padding-right: 15px;
+        gap: 3.5px;
+        margin-top: 0px;
+    }
+    .save_icon_svg {
+        width: 21px;
+        height: 21px;
     }
 }
 

@@ -1,11 +1,13 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
+    --page-wght: "wght" 400;
+    --card-title-wght: "wght" 715;
+    --card-text-wght: "wght" 410;
+    --post-label-wght: "wght" 400;
+    --button-text-wght: "wght" 400;
     --page-font-family-Inter: "Inter", sans-serif;
     --page-font-family-PressStart2P: "PressStart2P", sans-serif;
-    --page-font-weight-title-Inter: 715;
-    --page-font-weight-text-Inter: 410;
-    --page-font-weight-PressStart2P: 400;
     --background-gradient: repeating-linear-gradient(to left, #d3d3d3 0 2px, #d3d3d300 2px 4px), repeating-linear-gradient(to bottom, #d3d3d3 0 2px, #d3d3d300 2px 4px), linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
     --container-width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
     --horizontal-padding: clamp(0rem, -8.143rem + 34.742vw, 23.125rem);
