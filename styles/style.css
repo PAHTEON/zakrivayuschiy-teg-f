@@ -13,7 +13,7 @@
 .page {
     min-inline-size: 320px;
     min-block-size: 100dvb;
-    font-family: var(--Inter), sans-serif;
+    font-family: var(--page-font-family-Inter);
     background-image: var(--background-gradient);
     background-size: cover;
     background-attachment: fixed;
@@ -111,7 +111,7 @@
     mix-blend-mode: hard-light;
     font-family: var(--page-font-family-PressStart2P);
     font-size: 14px;
-    font-variation-settings: var(--post-label-wght);
+    font-weight: var(--post-label-wght);
     line-height: 1;
     text-transform: uppercase;
     color: #000000;
@@ -138,7 +138,7 @@
 .button__text {
     font-family: var(--page-font-family-PressStart2P);
     font-size: 14px;
-    font-variation-settings: var(--button-text-wght);
+    font-weight: var(--button-text-wght);
     z-index: 1;
     color: var(--button-text-color);
     mix-blend-mode: difference;
@@ -224,17 +224,17 @@
 
 .like-icon.is-liked .core {
     fill: #FF0000;
-    transition-delay: fill 0.3s linear 0s;
+    transition: fill 0.3s linear 0s;
 }
 
 .like-icon.is-liked .main-body {
     fill: #FF0000;
-    transition-delay: fill 0.3s linear 0.05s;
+    transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
     fill: #FF0000;
-    transition-delay: fill 0.3s linear 0.06s;
+    transition: fill 0.3s linear 0.06s;
 }
 
 .sparks {
@@ -318,8 +318,10 @@ dialog::backdrop {
 }
 
 .save_icon_svg {
+    /*
     fill: var(--button-text-color);
     color: var(--button-text-color);
+*/
     z-index: 1;
     mix-blend-mode: difference;
 }
@@ -327,7 +329,7 @@ dialog::backdrop {
 .button_save_text {
     font-family: var(--page-font-family-PressStart2P);
     font-size: 14px;
-    font-variation-settings: var(--button-text-wght);
+    font-weight: var(--button-text-wght);
     color: var(--button-text-color);
     mix-blend-mode: difference;
 }
@@ -337,11 +339,9 @@ dialog::backdrop {
     inline-size: 341px;
     padding-top: 30px;
     gap: 30px;
-    /*
-    block-size: 191px;*/
     font-family: var(--page-font-family-PressStart2P);
     font-size: 14px;
-    font-variation-settings: var(--button-text-wght);
+    font-weight: var(--button-text-wght);
     place-items: center;
 }
 
@@ -349,9 +349,6 @@ dialog::backdrop {
     display: grid;
     grid-template-columns: 1fr 234px;
     gap: 20px;
-    inline-size: 261px;
-    /*
-    block-size: 63px;*/
     text-transform: uppercase;
     line-height: 150%;
     align-items: center;
@@ -416,17 +413,12 @@ dialog::backdrop {
     .header_text {
         margin-top: 85px;
     }
-    .main {
-        width: 100vw;
-    }
     .card_title {
         padding-top: 5px;
-        padding-left: 10px;
     }
     .button_save {
         block-size: 55px;
         min-width: 335px;
-        display: grid;
         grid-auto-flow: column;
         padding-left: 15px;
         padding-right: 15px;
@@ -436,6 +428,13 @@ dialog::backdrop {
     .save_icon_svg {
         width: 21px;
         height: 21px;
+    }
+    .dialog_svg {
+        width: 39px;
+        height: 39px;
+    }
+    .dialog_floppy {
+        inline-size: 353px;
     }
 }
 
